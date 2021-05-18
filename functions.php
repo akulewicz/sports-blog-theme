@@ -1,20 +1,25 @@
 <?php 
 
-/* ======================= THEME SETUP =========================== */
 
-if (!function_exists('wppt_theme_setup')):
-    function wppt_theme_setup() {
+function wps_files() {
+    wp_enqueue_style('normalize-css', 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+    wp_enqueue_style('font-awsome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,400,500,700&display=swap&subset=latin-ext');
+    wp_enqueue_style('wps_main_styles', get_stylesheet_uri());
+}
 
-        add_theme_support('post-thumbnails');
+add_action('wp_enqueue_scripts', 'wps_files');
 
-        register_nav_menus([
-            'primary_menu' => __('Primary menu', 'wppt'),
-            'secondary_menu' => __('Secondary menu', 'wppt')
-        ]);
-    }
-endif;
 
-add_action('after_setup_theme', 'wppt_theme_setup');
+function wps_features() {
+    register_nav_menu('primary_menu', 'Primary Menu');
+    register_nav_menu('secondary_menu', 'Secondary Menu');
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+}
+
+add_action('after_setup_theme', 'wps_features');
+
 
 
 

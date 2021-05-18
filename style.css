@@ -1,13 +1,11 @@
 /* 
- Theme Name: Poruszeni Blog
+ Theme Name: Sports Blog Theme
  Theme URI: https://poruszeni.pl
  Author: Arkadiusz Kulewicz
  Author URI: https://poruszeni.pl 
- Description: Szablon dla bloga poruszeni.pl
  Version: 1.0 
  */
 
-@import "normalize.css";
 
 html {
     box-sizing: border-box;
