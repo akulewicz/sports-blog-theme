@@ -13,16 +13,28 @@
 </head>
 
 <body>
+<div class="search-box search-box--js">
+    <button class="search-box__close search-box__close--js"><i class="fas fa-times"></i></button>
+    <form class="search-form" action="/" method="get">
+      <input class="search-form__input" type="text" name="s" id="search" placeholder="Wpisz szukaną frazę" />
+      <button class="search-form__button"><i class="fas fa-search search-form__icon"></i></button>
+    </form>
+  </div>
     <header class="site-header">
         <nav class="top-navigation">
-
+            <div class="top-navigation__box">
             <?php wp_nav_menu(array(
                 'theme_location' => 'primary_menu',
                 'container'      => 'ul',
                 'menu_class'     => 'top-navigation__list top-navigation__list--js'
                 )); 
             ?>
+                    <button class="search-button search-button--js"><i class="fas fa-search"></i></button>
+
+            </div>
+           
         </nav>
+
         <button class="top-navigation__switcher top-navigation__switcher--js" aria-label="Otwórz menu"><i
                 class="fas fa-bars"></i></button>
         <h1 id="top" class="site-header__title"><a class="site-header__link" href="<?= get_bloginfo('wpurl'); ?>"><?= get_bloginfo('name'); ?></a></h1>

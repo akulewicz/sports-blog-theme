@@ -6,6 +6,8 @@ function wps_files() {
     wp_enqueue_style('font-awsome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,400,500,700&display=swap&subset=latin-ext');
     wp_enqueue_style('wps_main_styles', get_stylesheet_uri());
+    wp_enqueue_script('hamburger-menu', get_theme_file_uri('/js/menu.js'), NULL, '1.0', true);
+    wp_enqueue_script('search-box', get_theme_file_uri('/js/search.js'), NULL, '1.0', true);
 }
 
 add_action('wp_enqueue_scripts', 'wps_files');
@@ -106,18 +108,6 @@ add_filter( 'nav_menu_link_attributes', 'wppt_add_class_footermenu_a', 10, 3 );
 
 
 
-function poruszeni_register_styles() {
-    wp_enqueue_style('poruszeni-styles', get_template_directory_uri() . "/style.css", array(), '1.0', false);
-}
-add_action('wp_enqueue_scripts', 'poruszeni_register_styles');
-
-function wppt_add_scripts() {
-    wp_register_script('mobile-menu', get_template_directory_uri() . "/js/menu.js", array(), '1.0', true);
-    wp_enqueue_script('mobile-menu');
-  
-}
-
-add_action('wp_enqueue_scripts', 'wppt_add_scripts');
 
 
 
