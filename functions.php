@@ -102,13 +102,6 @@ function wppt_add_class_footermenu_a( $atts, $item, $args ) {
 add_filter( 'nav_menu_link_attributes', 'wppt_add_class_footermenu_a', 10, 3 );
 
 
-/* ======================= END FOOTER MENU CSS CLASSES =========================== */
-
-
-
-
-
-
 
 
 
