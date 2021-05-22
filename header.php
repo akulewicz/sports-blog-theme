@@ -24,7 +24,7 @@
         <nav class="top-navigation">
             <div class="top-navigation__box">
             <?php wp_nav_menu(array(
-                'theme_location' => 'primary_menu',
+                'theme_location' => 'header-menu',
                 'container'      => 'ul',
                 'menu_class'     => 'top-navigation__list top-navigation__list--js'
                 )); 

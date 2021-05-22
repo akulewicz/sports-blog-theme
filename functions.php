@@ -14,13 +14,57 @@ add_action('wp_enqueue_scripts', 'wps_files');
 
 
 function wps_features() {
-    register_nav_menu('primary_menu', 'Primary Menu');
-    register_nav_menu('secondary_menu', 'Secondary Menu');
+    register_nav_menu('header-menu', 'Header Menu');
+    register_nav_menu('footer-right-menu', 'Footer Right Menu');
+    register_nav_menu('footer-left-menu', 'Footer Left Menu');
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
 }
 
 add_action('after_setup_theme', 'wps_features');
+
+
+// ------------- HEADER NAVIGATION CUSTOM STYLES --------------------
+
+function wps_header_menu_li_class( $classes, $item, $args ) {
+    if( $args->theme_location == 'header-menu') {
+        $classes[] = 'top-navigation__item';
+    }
+    return $classes;
+
+}
+
+add_filter('nav_menu_css_class', 'wps_header_menu_li_class', 1, 3);
+
+function wps_header_menu_a_class( $atts, $item, $args ) {
+    if( $args->theme_location == 'header-menu' ) {
+      $atts['class'] = 'top-navigation__link';
+    }
+    return $atts;
+}
+
+add_filter( 'nav_menu_link_attributes', 'wps_header_menu_a_class', 1, 3);
+
+// ------------- FOOTER NAVIGATIONS CUSTOM STYLES --------------------
+
+function wps_footer_menu_li_class( $classes, $item, $args ) {
+    if( $args->theme_location == 'footer-left-menu' || $args->theme_location == 'footer-right-menu') {
+        $classes[] = 'footer-navigation__item';
+    }
+    return $classes;
+
+}
+
+add_filter('nav_menu_css_class', 'wps_footer_menu_li_class', 1, 3);
+
+function wps_footer_menu_a_class( $atts, $item, $args ) {
+    if( $args->theme_location == 'footer-left-menu' || $args->theme_location == 'footer-right-menu' ) {
+      $atts['class'] = 'footer-navigation__link';
+    }
+    return $atts;
+}
+
+add_filter( 'nav_menu_link_attributes', 'wps_footer_menu_a_class', 1, 3 );
 
 
 
