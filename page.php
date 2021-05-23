@@ -1,10 +1,9 @@
 <?php get_header() ?>
-<div class="container">
-    <div class="page-with-sidebar">
+<div class="single-post-container">
         <main class="main">
-            <?php get_template_part('content', 'post'); ?>
+            <?php get_template_part('content', 'page'); ?>
         </main>
-        <?php get_sidebar();?>
-    </div>
+       
+   
 
 <?php get_footer() ?>
