@@ -4,7 +4,7 @@
                 <?php foreach ((get_the_category()) as $category) : ?>
                     <a class="post__category" href="<?= get_category_link($category->cat_ID); ?>"><?= $category->category_nicename . ' '; ?></a>
                 <?php endforeach; ?>
-                <h2 class="post__title post__title--big"><?= the_title(); ?></h2>
+                <h1 class="post__title post__title--big"><?= the_title(); ?></h1>
                 <p class="post__date post__date--with-margin"><?= get_the_date(); ?></p>
                 <div class="post__image-box">
                     <?php the_post_thumbnail('medium-large', array('class' => 'post__image post__image--featured')) ?>

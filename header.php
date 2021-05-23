@@ -37,5 +37,9 @@
 
         <button class="top-navigation__switcher top-navigation__switcher--js" aria-label="Otwórz menu"><i
                 class="fas fa-bars"></i></button>
-        <h1 id="top" class="site-header__title"><a class="site-header__link" href="<?= get_bloginfo('wpurl'); ?>"><?= get_bloginfo('name'); ?></a></h1>
-    </header>
+        <?php if (is_home()) :?>
+            <h1 id="top" class="site-header__title"><a class="site-header__link" href="<?= get_bloginfo('wpurl'); ?>"><?= get_bloginfo('name'); ?></a></h1>
+        <?php else: ?>
+            <div id="top" class="site-header__title"><a class="site-header__link" href="<?= get_bloginfo('wpurl'); ?>"><?= get_bloginfo('name'); ?></a></div>
+        <?php endif; ?>
+        </header>

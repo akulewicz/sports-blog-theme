@@ -76,6 +76,7 @@ blockquote {
   width: 100%;
   font-family: "Roboto Slab", serif;
   text-align: center;
+  font-weight: 700;
   font-size: 78px;
   padding: 15px 0;
 }
