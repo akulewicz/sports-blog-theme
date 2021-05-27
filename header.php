@@ -21,20 +21,20 @@
     </form>
   </div>
     <header class="site-header">
-        <nav class="top-navigation top-navigation--js">
+        <nav class="top-navigation">
             <div class="top-navigation__box">
             <?php wp_nav_menu(array(
                 'theme_location' => 'header-menu',
                 'container'      => 'ul',
-                'menu_class'     => 'top-navigation__list'
+                'menu_class'     => 'top-navigation__list top-navigation__list--js'
                 )); 
             ?>
-                    
+                    <button class="search-button search-button--js"><i class="fas fa-search"></i></button>
 
             </div>
            
         </nav>
-        <button class="search-button search-button--js" aria-label="Szukaj"><i class="fas fa-search"></i></button>
+
         <button class="top-navigation__switcher top-navigation__switcher--js" aria-label="Otwórz menu"><i
                 class="fas fa-bars"></i></button>
         <?php if (is_home()) :?>
