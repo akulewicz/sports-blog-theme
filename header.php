@@ -29,7 +29,7 @@
                 'menu_class'     => 'top-navigation__list top-navigation__list--js'
                 )); 
             ?>
-                    <button class="search-button search-button--js"><i class="fas fa-search"></i></button>
+                    <button class="search-button search-button--js" aria-label="Szukaj"><i class="fas fa-search"></i></button>
 
             </div>
            
