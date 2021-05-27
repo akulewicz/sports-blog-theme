@@ -163,15 +163,16 @@ blockquote {
 
 @media (max-width: 991px) {
   .top-navigation {
+    opacity: 0;
+    visibility: hidden;
     z-index: 0;
-    justify-content: flex-start;
-    align-items: flex-start;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.815);
+    background-color: rgba(20, 20, 20, 0.945);
+    transition: all 0.5s;
   }
 
   .top-navigation__list {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 60px 14px;
@@ -179,8 +180,9 @@ blockquote {
     height: 100vh;
   }
 
-  .top-navigation__list--visible {
-    display: flex;
+  .top-navigation--visible {
+    opacity: 1;
+    visibility: visible;
   }
 
   .top-navigation__item {
